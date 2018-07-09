@@ -29,17 +29,17 @@ import { MyserviceService } from './myservice.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BookComponent } from './book/book.component';
 import { FooterComponent } from './footer/footer.component';
-import { CondPipe } from './cond.pipe';
-import { AuthorPipe } from './author.pipe';
-import { NamePipe } from './name.pipe';
+import { CondPipe } from './pipes/cond.pipe';
+import { AuthorPipe } from './pipes/author.pipe';
+import { NamePipe } from './pipes/name.pipe';
 import { LoginComponent } from './login/login.component';
 import { WishComponent } from './wish/wish.component';
 import { MylistComponent } from './mylist/mylist.component';
-import { PricePipe } from './price.pipe';
-import { PriceePipe } from './pricee.pipe';
+import { PricePipe } from './pipes/price.pipe';
+import { PriceePipe } from './pipes/pricee.pipe';
 import { MessageComponent } from './message/message.component';
-import { SentPipe } from './sent.pipe';
-import { ReceivedPipe } from './received.pipe';
+import { SentPipe } from './pipes/sent.pipe';
+import { ReceivedPipe } from './pipes/received.pipe';
 
 const routes: Routes = [
   {

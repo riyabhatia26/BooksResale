@@ -25,9 +25,9 @@
 
               <div class="form-group">
                 <label class="center-block">Name:</label>
-                  <input type="text" #name="ngModel" required 
-                  [class.is-invalid]="name.invalid && name.touched" class="form-control" name="name" [(ngModel)]="userModel.name">
-                <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required.</small>
+                  <input type="text" #uname="ngModel" required 
+                  [class.is-invalid]="uname.invalid && uname.touched" class="form-control" name="uname" [(ngModel)]="userModel.uname">
+                <small class="text-danger" [class.d-none]="uname.valid || uname.untouched">Name is required.</small>
               </div>
               <div class="form-group">
                 <label class="center-block">Email:</label>

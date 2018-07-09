@@ -67,9 +67,10 @@
                       </div>
                     <small class="text-danger" [class.d-none]="cndition.valid || cndition.untouched">Please specify book condition.</small>
                 </div>
-
-              <button (click)="onSubmit()" [disabled]="listingFrom.form.invalid" class="btn btn-primary">Add</button>
-            </form>
+                <div class="d-flex justify-content-around">
+                  <button (click)="onSubmit()" [disabled]="listingFrom.form.invalid" class="btn btn-primary">Add</button>
+                </div>
+              </form>
 
             <div class="alert alert-danger" *ngIf="errorMsg">
                 {{errorMsg}}

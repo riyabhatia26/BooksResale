@@ -23,17 +23,17 @@ export class MyserviceService {
   //   })
   // };
 
-  private listingsurl : string = "http://localhost:8000/listingsdata";
-  private wishlisturl : string = "http://localhost:8000/wishlistdata";
-  private addbookurl : string = "http://localhost:8000/addbook";
-  private adduserurl : string = "http://localhost:8000/adduser";
-  private detailurl : string = "http://localhost:8000/detail";
-  private fetchurl : string = "http://localhost:8000/fetch";
-  private addwishurl : string = "http://localhost:8000/addwish";
-  private mylisturl : string = "http://localhost:8000/mylistdata";
-  private sendmsgurl : string = "http://localhost:8000/addmsg";
-  private mysentmsgsurl : string = "http://localhost:8000/mysentmsgs";
-  private myrecmsgsurl : string = "http://localhost:8000/myrecmsgs";
+  private listingsurl : string = "http://localhost:3000/listingsdata";
+  private wishlisturl : string = "http://localhost:3000/wishlistdata";
+  private addbookurl : string = "http://localhost:3000/addbook";
+  private adduserurl : string = "http://localhost:3000/adduser";
+  private detailurl : string = "http://localhost:3000/detail";
+  private fetchurl : string = "http://localhost:3000/fetch";
+  private addwishurl : string = "http://localhost:3000/addwish";
+  private mylisturl : string = "http://localhost:3000/mylistdata";
+  private sendmsgurl : string = "http://localhost:3000/addmsg";
+  private mysentmsgsurl : string = "http://localhost:3000/mysentmsgs";
+  private myrecmsgsurl : string = "http://localhost:3000/myrecmsgs";
 
   public id;
   public userid;
