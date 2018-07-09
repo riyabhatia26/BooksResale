@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MyserviceService } from '../myservice.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { BookComponent } from '../book/book.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-addlisting',
@@ -11,14 +12,13 @@ import { BookComponent } from '../book/book.component';
 export class AddlistingComponent implements OnInit {
 
   // cndition = ['New', 'Almost New', 'Slight Damage', 'Worn'];
-  
-  listingModel = new BookComponent(null,null,null,null,null);
+  listingModel = new BookComponent(null,null,null,null,null,null);
 
   submitted = false;
   errorMsg = '';
 
   
-  constructor(private addbook : MyserviceService) { }
+  constructor(private addbook : MyserviceService, private router : Router) { }
   ngOnInit() {
     // this.addbook.addBook(newBook)
     // .subscribe(book => 
@@ -35,6 +35,7 @@ export class AddlistingComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    this.listingModel.userid = localStorage.getItem('currentuid');
     this.addbook.addBook(this.listingModel)
       .subscribe(
         response =>{ 
@@ -45,6 +46,7 @@ export class AddlistingComponent implements OnInit {
           this.errorMsg = error.statusText
         }
       )
+    this.router.navigate(['/listings']);
   }
 
 }

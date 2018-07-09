@@ -81,13 +81,20 @@ export class MyserviceService {
     return this.http.get(this.myrecmsgsurl + `?id=` + localStorage.getItem('currentuid'));
   }
 
+  // fetchuser(): Observable<any>{
+  //   let Params = new HttpParams();
+  //   Params = Params.append('email', this.email);
+  //   Params = Params.append('password', this.password);
+  //   console.log(this.password)
+  //   console.log(Params.get('password'))
+  //   // let params = new HttpParams().set('email', this.email);
+  //   // let params = new HttpParams().set('password', this.password);
+  //   return this.http.get(this.fetchurl, {params:Params})
+  // }
+
+
   fetchuser(): Observable<any>{
-    let Params = new HttpParams();
-    Params = Params.append('email', this.email);
-    Params = Params.append('password', this.password);
-    // let params = new HttpParams().set('email', this.email);
-    // let params = new HttpParams().set('password', this.password);
-    return this.http.get(this.fetchurl, {params:Params})
+    return this.http.get(this.fetchurl + `?email=` + this.email + `&password=` + this.password);
   }
 
   getwishlist(): Observable<any>{

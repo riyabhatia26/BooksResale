@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   loginModel = new LoginComponent(null,null);
   // userModel = new UsersComponent('','',0);
   public userdetails;
+  public errorMsg;
   loginForm: FormGroup;
 
   constructor(private fetchuser : MyserviceService, private router: Router) { }
@@ -30,19 +31,28 @@ export class HomeComponent implements OnInit {
     // console.log("login submit")
     
     // console.log(this.loginModel.email);
-    // console.log(this.loginModel.password);
+//     console.log(this.loginModel.password);
 
     this.fetchuser.loginhelp(this.loginModel.email, this.loginModel.password);
-    this.router.navigate(['/listings']);
+    
     this.fetchuser.fetchuser()
     .subscribe(data => {
       this.userdetails=Object.values(data)
 //      console.log("fetchuserservice");
         // console.log(typeof this.userdetails)
         // console.log(this.userdetails[0].id)
-    });  
-    this.fetchuser.useridVal(this.userdetails[0].id);
+        
+        console.log(this.userdetails);
+        
+        if(this.userdetails.length == 2){
+          this.errorMsg="Email Id or password is incorrect."
+        }
+        else{
+          this.fetchuser.useridVal(this.userdetails[0].id);
+          this.router.navigate(['/listings']);
+        }
 
+    });  
     
 
   }

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class BookComponent implements OnInit {
 
   constructor(
+    public userid : string,
     public name : string,
     public author : string,
     public image : string,
